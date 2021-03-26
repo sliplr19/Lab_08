@@ -67,7 +67,12 @@ covid <- tribble(
 ```
 
 ### Exercise 2
-ksaldkjasl
-...
 
-Add exercise headings as needed.
+```{r graph}
+covid %>%
+ggplot(aes(x = date, y = count, color = mask, group = mask)) + 
+  geom_line() +
+  geom_point() +
+  theme(axis.text.x = element_text(angle = 90)) +
+  labs(y = "Rolling Average Daily Cases per 100k", x = "Date", title = "Kansas Covid-19 7-Day Rolling Average of Daily Cases per 100k")
+```
