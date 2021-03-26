@@ -67,7 +67,7 @@ covid <- tribble(
 ```
 
 ### Exercise 2
-
+ksaldkjasl
 ...
 
 Add exercise headings as needed.
