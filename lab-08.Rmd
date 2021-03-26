@@ -9,6 +9,7 @@ output: github_document
 
 ```{r load-packages, message=FALSE, warning = FALSE}
 library(tidyverse) 
+library(wesanderson)
 ```
 
 ### Exercise 1
@@ -70,9 +71,24 @@ covid <- tribble(
 
 ```{r graph}
 covid %>%
-ggplot(aes(x = date, y = count, color = mask, group = mask)) + 
+ggplot(aes(x = date, y = factor(count), color = mask, group = mask)) + 
   geom_line() +
   geom_point() +
   theme(axis.text.x = element_text(angle = 90)) +
-  labs(y = "Rolling Average Daily Cases per 100k", x = "Date", title = "Kansas Covid-19 7-Day Rolling Average of Daily Cases per 100k")
+  scale_y_discrete(name ="Rolling Average Daily Cases per 100k", 
+                    labels = c("4" = 4,"8" = 8,
+  "12" = 12,"16" = 16,"20" = 20, "24" = 24)) +
+  labs(x = "Date", title = "Kansas Covid-19 7-Day Rolling Average of Daily Cases per 100k") +
+  scale_color_manual(values=wes_palette(n=2, name="BottleRocket2"))
 ```
+
+### Exercise 3
+
+It shows that the no mask cases are actually much lower, which was not clear on the other graph due to the weird y-axes. We also see the nearly steady number of cases with no mask and the decrease of cases for mask.
+
+### Exercise 4 
+
+What the data tells us is over time, wearing a mask decreases the number of cases of Covid per 100k. Not wearing a mask results in a steady number of cases.
+
+One might claim that, because the number of cases is less for not wearing a mask, it's better to not wear a mask. I am suspicious of that claim. My guess would be less people don't wear masks, so there would be less cases for no mask simply because there's less people in that group. To test this perhaps we could look at the percentage of cases within the two groups to see if it is more likely to get Covid with or without a mask.
+
