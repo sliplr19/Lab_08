@@ -13,10 +13,58 @@ library(tidyverse)
 
 ### Exercise 1
 
-Remove this text, and add your answer for Exercise 1 here.
-Add code chunks as needed.
-Don't forget to label your code chunk.
-Do not use spaces in code chunk labels.
+We're going to make a tibble of dates, counts, and mask/no mask. Honestly, what took me so long on this lab was just figuring out what in the world that graph was trying to convey.
+
+```{r df}
+covid <- tribble(
+  ~date, ~count, ~mask,
+  "7/13/2020", 23, "yes",
+  "7/14/2020", 20, "yes", 
+  "7/15/2020", 20, "yes",
+  "7/16/2020", 20, "yes",
+  "7/17/2020", 20, "yes", 
+  "7/18/2020", 20, "yes",
+  "7/19/2020", 20, "yes",
+  "7/20/2020", 20, "yes", 
+  "7/21/2020", 21, "yes",
+  "7/22/2020", 21, "yes",
+  "7/23/2020", 20, "yes",
+  "7/24/2020", 20, "yes",
+  "7/25/2020", 20, "yes",
+  "7/26/2020", 19, "yes", 
+  "7/27/2020", 18, "yes",
+  "7/28/2020", 16, "yes",
+  "7/29/2020", 16, "yes", 
+  "7/30/2020", 16, "yes",
+  "7/31/2020", 16, "yes",
+  "8/1/2020", 16, "yes", 
+  "8/2/2020", 16, "yes",
+  "8/3/2021", 16, "yes",
+  "7/13/2020", 9, "no",
+  "7/14/2020", 9, "no", 
+  "7/15/2020", 10, "no",
+  "7/16/2020", 10, "no",
+  "7/17/2020", 9, "no", 
+  "7/18/2020", 9, "no",
+  "7/19/2020", 9, "no",
+  "7/20/2020", 9, "no", 
+  "7/21/2020", 9, "no",
+  "7/22/2020", 9, "no",
+  "7/23/2020", 9, "no",
+  "7/24/2020", 9, "no",
+  "7/25/2020", 10, "no",
+  "7/26/2020", 10, "no", 
+  "7/27/2020", 9, "no",
+  "7/28/2020", 9, "no",
+  "7/29/2020", 9, "no", 
+  "7/30/2020", 10, "no",
+  "7/31/2020", 9, "no",
+  "8/1/2020", 9, "no", 
+  "8/2/2020", 9, "no",
+  "8/3/2021", 9, "no",
+   
+)
+```
 
 ### Exercise 2
 
